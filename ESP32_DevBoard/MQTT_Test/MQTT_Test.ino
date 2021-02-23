@@ -64,7 +64,7 @@ void callback(char* topic, byte *payload, unsigned int length) {
    */
     Serial.println("--- new message from broker ---");
     Serial.print("Topic:    ");
-    Serial.print(topic);
+    Serial.println(topic);
     Serial.print("Message:  ");
     Serial.write(payload, length);
     Serial.println();
