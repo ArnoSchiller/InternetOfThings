@@ -1,0 +1,34 @@
+Interesting: https://github.com/mopidy/mopidy-alsamixer/blob/master/mopidy_alsamixer/mixer.py
+
+Installation:
+pip3 install pyalsaaudio
+
+
+import alsaaudio
+cardindex = -1
+mixer_name = "Master"
+
+# get correct cardindex
+all_cards = alsaaudio.cards()
+for c_idx in range(len(all_cards)):
+    card_mixers = alsaaudio.mixers(cardindex=c_idx)
+    for m_idx, m in enumerate(card_mixers):
+        if m.lower() == "headphone":
+            cardindex = c_idx
+            mixer_name = m
+
+print(cardindex)
+print(mixer_name)
+
+# mute
+mixer = alsaaudio.Mixer(control=mixer_name, cardindex=cardindex)
+mixer.setmute(1)
+mixer.setmute(0)
+mixer.getmute()
+
+# volume 
+mixer.getvolume()
+mixer.setvolume(85)
+
+
+mixer = alsaaudio.Mixer()
