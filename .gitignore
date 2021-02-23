@@ -348,3 +348,9 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+*/accessData.h
+
+ESP32_DevBoard/MQTT_Test/accessData.h
+
+ESP32_DevBoard/LED_via_MQTT/accessData.h
